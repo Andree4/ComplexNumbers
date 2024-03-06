@@ -27,10 +27,19 @@ public class Complex {
     public String toString() {
         return "(" + real + " + " + img + "i)";
     }
-    /*  */
-    
-}
-public static void main(String[] args) {
+    /* Parte de Pablo Lopez Chavez */
+    /* Division / Conjugate */
+
+    /* Parte de Bruno Monzon */
+    /* Module / Square */
+
+    /* Parte de Jhamil Rejas */
+    /* Phase / ToComplex */
+
+    /* Parte de Daniel Arancibia */
+    /* Power / Logarithm */
+
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ingresa el primer numero real:");
@@ -46,13 +55,11 @@ public static void main(String[] args) {
         Complex num1 = new Complex(real1, imag1);
         Complex num2 = new Complex(real2, imag2);
 
+        /* Agregar el codigo para usar y mostrar la función */
+
         Complex addition = num1.addition(num2);
         Complex subtraction = num1.subtraction(num2);
         Complex multiplication = num1.multiplication(num2);
-
-        System.out.println("Operacion con numeros complejos:");
-        System.out.println("Arancibia Aguilar Daniel Andree");
-        System.out.println("Laboratorio 2 Ing Software");
 
         System.out.println("suma: " + addition.toString());
         System.out.println("resta: " + subtraction.toString());
@@ -60,3 +67,4 @@ public static void main(String[] args) {
 
         scanner.close();
     }
+}
