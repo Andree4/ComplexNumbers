@@ -49,7 +49,19 @@ public class Complex {
         return new Complex(y.real, -y.img);
     }
     /* Parte de Bruno Monzon */
-    /* Module / Square */
+    /* Module / SquareRoot */
+    public Complex module() {
+        double r = Math.sqrt(Math.pow(this.real, 2) + Math.pow(this.img, 2));
+        return new Complex(r, 0);
+    }
+
+    public Complex squareRoot() {
+        double r = Math.sqrt(Math.sqrt(Math.pow(this.real, 2) + Math.pow(this.img, 2)));
+        double theta = Math.atan2(this.img, this.real);
+        double newReal = r * Math.cos(theta / 2);
+        double newImg = r * Math.sin(theta / 2);
+        return new Complex(newReal, newImg);
+    }
 
     /* Parte de Jhamil Rejas */
     /* Phase / ToComplex */
@@ -104,6 +116,11 @@ public class Complex {
         Complex logarithmNum1 = num1.logarithm();
         Complex powerNum2 = num2.power(pot);
         Complex logarithmNum2 = num2.logarithm();
+        /* Parte de Bruno Monzon */
+        Complex moduleNum1 = num1.module();
+        Complex moduleNum2 = num2.module();
+        Complex squareRootNum1 = num1.squareRoot();
+        Complex squareRootNum2 = num2.squareRoot();
 
         System.out.println("suma: " + addition.toString());
         System.out.println("resta: " + subtraction.toString());
@@ -117,6 +134,11 @@ public class Complex {
         System.out.println("Logaritmo Num1: " + logarithmNum1.toString());
         System.out.println("Potencia Num2: " + powerNum2.toString());
         System.out.println("Logaritmo Num2: " + logarithmNum2.toString());
+        /* Parte de Bruno Monzon */
+        System.out.println("Modulo Num1: " + moduleNum1.toString());
+        System.out.println("Modulo Num2: " + moduleNum2.toString());
+        System.out.println("Raiz Cuadrada Num1: " + squareRootNum1.toString());
+        System.out.println("Raiz Cuadrada Num2: " + squareRootNum2.toString());
         scanner.close();
     }
 }
