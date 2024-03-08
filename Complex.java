@@ -65,6 +65,23 @@ public class Complex {
 
     /* Parte de Jhamil Rejas */
     /* Phase / ToComplex */
+    public double phase() {
+        return Math.atan2(this.img, this.real);
+    }
+
+    public static Complex toComplex(String cpx) {
+        String[] parts = cpx.split("\\+");
+        if (parts.length != 2) {
+            parts = cpx.split("-");
+            if (parts.length != 2) {
+                throw new IllegalArgumentException("Formato de numero complejo incorrecto");
+            }
+            parts[1] = "-" + parts[1];
+        }
+        double real = Double.parseDouble(parts[0]);
+        double img = Double.parseDouble(parts[1].replace("i", ""));
+        return new Complex(real, img);
+    }
 
     /* Parte de Daniel Arancibia */
     /* Power / Logarithm */
