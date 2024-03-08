@@ -138,6 +138,11 @@ public class Complex {
         Complex moduleNum2 = num2.module();
         Complex squareRootNum1 = num1.squareRoot();
         Complex squareRootNum2 = num2.squareRoot();
+        /* Parte de Jhamil Crespo */
+        Complex complexNumberPhase = new Complex(3, 4);
+        double phase = complexNumberPhase.phase();
+        String cpx = "3+4i";
+        Complex complexNumberFromString = Complex.toComplex(cpx);
 
         System.out.println("suma: " + addition.toString());
         System.out.println("resta: " + subtraction.toString());
@@ -157,5 +162,8 @@ public class Complex {
         System.out.println("Raiz Cuadrada Num1: " + squareRootNum1.toString());
         System.out.println("Raiz Cuadrada Num2: " + squareRootNum2.toString());
         scanner.close();
+        /* Parte de Jhamil Crespo */
+        System.out.println("Fase del número complejo: " + phase);
+        System.out.println("Número complejo covertido desde una cadena: " + complexNumberFromString.toString());
     }
 }
